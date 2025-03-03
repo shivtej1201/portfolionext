@@ -4,6 +4,12 @@ import { Education } from "@/components/pages/Education";
 import { Experience } from "@/components/pages/Experience";
 import { HeroSection } from "@/components/pages/HeroSection";
 import { Skills } from "@/components/pages/Skills";
+import {
+  Certifications,
+  Cirtifications,
+} from "@/components/pages/Certifications";
+import FooterSection from "@/components/pages/FooterSection";
+import { ContactForm } from "@/components/pages/ContactForm";
 
 export default function Home() {
   return (
@@ -14,6 +20,9 @@ export default function Home() {
       <Experience />
       <HeroSection />
       <Skills />
+      <Certifications />
+      <ContactForm />
+      <FooterSection />
     </>
   );
 }

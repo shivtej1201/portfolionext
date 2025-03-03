@@ -14,11 +14,7 @@ export const CardSpotlight = ({
 }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  function handleMouseMove({
-    currentTarget,
-    clientX,
-    clientY
-  }) {
+  function handleMouseMove({ currentTarget, clientX, clientY }) {
     let { left, top } = currentTarget.getBoundingClientRect();
 
     mouseX.set(clientX - left);
@@ -37,11 +33,12 @@ export const CardSpotlight = ({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      {...props}>
+      {...props}
+    >
       <motion.div
         className="pointer-events-none absolute z-0 -inset-px rounded-md opacity-0 transition duration-300 group-hover/spotlight:opacity-100"
         style={{
-          backgroundColor: color,
+          backgroundColor: "color",
           maskImage: useMotionTemplate`
             radial-gradient(
               ${radius}px circle at ${mouseX}px ${mouseY}px,
@@ -49,7 +46,8 @@ export const CardSpotlight = ({
               transparent 80%
             )
           `,
-        }}>
+        }}
+      >
         {isHovering && (
           <CanvasRevealEffect
             animationSpeed={5}
@@ -58,7 +56,8 @@ export const CardSpotlight = ({
               [59, 130, 246],
               [139, 92, 246],
             ]}
-            dotSize={3} />
+            dotSize={3}
+          />
         )}
       </motion.div>
       {children}
